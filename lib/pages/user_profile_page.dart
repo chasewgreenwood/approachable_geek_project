@@ -1,5 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:approachable_geek_project/widget/info_card.dart';
+import 'package:approachable_geek_project/pages/photo_input_page.dart';
+import 'package:approachable_geek_project/pages/name_input_page.dart';
+import 'package:approachable_geek_project/pages/phone_input_page.dart';
+import 'package:approachable_geek_project/pages/email_input_page.dart';
+import 'package:approachable_geek_project/pages/bio_input_page.dart';
+
+const name = 'John Doe';
+const phone = '(801)-123-456';
+const email = 'johndoe@email.com';
+const bio = 'Lorem ipsum dolor sit amet, quo facete ponderum cu, vix et nihil delenit accumsan, iisque iracundia reformidans te qui.';
 
 class UserProfilePage extends StatefulWidget {
   @override
@@ -22,21 +33,28 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         fontWeight: FontWeight.bold,
                       )
                   ),
-                  /*Padding(
-                    padding: EdgeInsets.all(16.0),
-                  ),*/
-                  CircleAvatar(
-                      radius: 80,
-                      backgroundColor: Colors.blue.shade700,
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print('Name: ' + name);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return PhotoInputPage();
+                        }));
+                      },
+                    child: CircleAvatar(
+                    radius: 80,
+                    backgroundColor: Colors.blue.shade700,
                       child: CircleAvatar(
-                        radius: 75,
-                        backgroundImage: AssetImage('images/da_boys.jpg'),
+                      radius: 75,
+                      backgroundImage: AssetImage('images/da_boys.jpg'),
                         child: Container(
-                          height: 140,
-                          alignment: Alignment.topRight,
+                        height: 140,
+                        alignment: Alignment.topRight,
                           child: CircleAvatar(
-                            radius: 20,
-                            backgroundColor: Colors.white,
+                          radius: 20,
+                          backgroundColor: Colors.white,
                             child: Icon(
                               Icons.create,
                               color: Colors.blue.shade700,
@@ -45,128 +63,47 @@ class _UserProfilePageState extends State<UserProfilePage> {
                           ),
                         ),
                       )
-                  ),
-                  Card(
-                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                    child: ListTile(
-                      leading: Text(
-                        'Name',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.grey.shade500,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      title: Text(
-                        'John Doe',
-                        maxLines: 1,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      trailing: Icon(
-                        Icons.navigate_next,
-                        color: Colors.grey.shade400,
-                        size: 36.0,
-                      ),
                     ),
                   ),
-                  Card(
-                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                    child: ListTile(
-                      leading: Text(
-                        'Phone',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.grey.shade500,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      title: Text(
-                        '(801) 123-4567',
-                        maxLines: 1,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      trailing: Icon(
-                        Icons.navigate_next,
-                        color: Colors.grey.shade400,
-                        size: 36.0,
-                      ),
-                    ),
+                  InfoCard(
+                      title: 'Name',
+                      subtitle: name,
+                      onPressed: () {
+                        print('Name: ' + name);
+                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                          return NameInputPage();
+                        }));
+                        },
                   ),
-                  Card(
-                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                    child: ListTile(
-                      leading: Text(
-                        'Email',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.grey.shade500,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      title: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          'johndoe@email.com',
-                          maxLines: 1,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      trailing: Icon(
-                        Icons.navigate_next,
-                        color: Colors.grey.shade400,
-                        size: 36.0,
-                      ),
-                    ),
+                  InfoCard(
+                    title: 'Phone',
+                    subtitle: phone,
+                    onPressed: () {
+                      print('Phone: ' + phone);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return PhoneInputPage();
+                      }));
+                      },
                   ),
-                  Card(
-                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-                    child: ListTile(
-                      title: Text(
-                        'Tell us about yourself',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.grey.shade500,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Container(
-                        child: Row(
-                          children: <Widget>[
-                            Flexible(
-                              child: Container(
-                                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  'Lorem ipsum dolor sit amet, quo facete ponderum cu, vix et nihil delenit accumsan, iisque iracundia reformidans te qui. Cu nam ponderum vulputate. Alia omittantur ne nam. Solum inermis ad pro, alii placerat vix et. Dolore everti eam te, no sed admodum eligendi. Feugait voluptatum ad nec, eu mea ceteros nominati senserit, id mei solet malorum periculis.',
-                                  style: TextStyle(
-                                  fontSize: 12.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      trailing: Icon(
-                        Icons.navigate_next,
-                        color: Colors.grey.shade400,
-                        size: 36.0,
-                      ),
-                    ),
+                  InfoCard(
+                    title: 'Email',
+                    subtitle: email,
+                    onPressed: () {
+                      print('Email: ' + email);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return EmailInputPage();
+                      }));
+                      },
+                  ),
+                  InfoCard(
+                    title: 'Tell us about yourself',
+                    subtitle: bio,
+                    onPressed: () {
+                      print('Bio: ' + bio);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return BioInputPage();
+                      }));
+                      },
                   ),
                 ]
             )

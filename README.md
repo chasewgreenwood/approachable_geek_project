@@ -4,13 +4,21 @@ A user profile page with editable profile picture, name, phone, email, and bio.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+A nice resource to get you started if this is your first time using Flutter on MacOs:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Help getting started with Flutter on MacOS](https://flutter.dev/docs/get-started/install/macos)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Carefully read through the guide and follow the directions to setup Flutter with your OS.
+
+- [Help with iOS setup](https://flutter.dev/docs/get-started/install/macos#ios-setup)
+- [Help with Android setup](https://flutter.dev/docs/get-started/install/macos#android-setup)
+
+Both links can guide you on how to simulate this Flutter app with an emulator.
+
+- [Help with setting up Android Studio to work with Flutter](https://flutter.dev/docs/get-started/editor)
+- [Help with setting up Visual Studio Code to work with Flutter](https://flutter.dev/docs/get-started/editor?tab=vscode)
+- [Help with setting up Emacs to work with Flutter](https://flutter.dev/docs/get-started/editor?tab=emacs)
+
+Once the Flutter setup is complete and working with your editor you can proceed with cloning the repo and running the code.

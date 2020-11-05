@@ -85,7 +85,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         ),
                       ),
                       title: Text(
-                        '+8011234567',
+                        '(801) 123-4567',
                         maxLines: 1,
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -112,7 +112,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                         ),
                       ),
                       title: FittedBox(
-                        fit: BoxFit.contain,
+                        fit: BoxFit.scaleDown,
                         child: Text(
                           'johndoe@email.com',
                           maxLines: 1,
@@ -146,6 +146,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                           children: <Widget>[
                             Flexible(
                               child: Container(
+                                margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   'Lorem ipsum dolor sit amet, quo facete ponderum cu, vix et nihil delenit accumsan, iisque iracundia reformidans te qui. Cu nam ponderum vulputate. Alia omittantur ne nam. Solum inermis ad pro, alii placerat vix et. Dolore everti eam te, no sed admodum eligendi. Feugait voluptatum ad nec, eu mea ceteros nominati senserit, id mei solet malorum periculis.',

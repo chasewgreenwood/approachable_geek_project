@@ -8,6 +8,17 @@ class UserProfilePage extends StatefulWidget {
 class _UserProfilePageState extends State<UserProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.teal[200],
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            CircleAvatar(
+              backgroundImage: AssetImage('images/da_boys.jpg'),
+            )
+          ]
+        )
+      )
+    );
   }
 }

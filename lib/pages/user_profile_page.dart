@@ -1,16 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:approachable_geek_project/widget/info_card.dart';
+import 'package:approachable_geek_project/models/user_profile.dart';
 import 'package:approachable_geek_project/pages/photo_input_page.dart';
 import 'package:approachable_geek_project/pages/name_input_page.dart';
 import 'package:approachable_geek_project/pages/phone_input_page.dart';
 import 'package:approachable_geek_project/pages/email_input_page.dart';
 import 'package:approachable_geek_project/pages/bio_input_page.dart';
+import 'package:approachable_geek_project/widgets/info_card.dart';
+import 'package:approachable_geek_project/widgets/text_input_field.dart';
 
-const name = 'John Doe';
-const phone = '(801)-123-456';
-const email = 'johndoe@email.com';
-const bio = 'Lorem ipsum dolor sit amet, quo facete ponderum cu, vix et nihil delenit accumsan, iisque iracundia reformidans te qui.';
+UserProfile userProfile = new UserProfile(
+  'John',
+  'Doe',
+  '(801) 123-4567',
+  'johndoe@email.com',
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+);
 
 class UserProfilePage extends StatefulWidget {
   @override
@@ -38,7 +43,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      print('Name: ' + name);
+                      print('Name: ' + userProfile.firstName + ' ' + userProfile.lastName);
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
                         return PhotoInputPage();
                         }));
@@ -67,9 +72,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ),
                   InfoCard(
                       title: 'Name',
-                      subtitle: name,
+                      subtitle: userProfile.firstName + ' ' + userProfile.lastName,
                       onPressed: () {
-                        print('Name: ' + name);
+                        print('Name: ' + userProfile.firstName + ' ' + userProfile.lastName);
                         Navigator.push(context, MaterialPageRoute(builder: (context) {
                           return NameInputPage();
                         }));
@@ -77,9 +82,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ),
                   InfoCard(
                     title: 'Phone',
-                    subtitle: phone,
+                    subtitle: userProfile.phone,
                     onPressed: () {
-                      print('Phone: ' + phone);
+                      print('Phone: ' + userProfile.phone);
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
                         return PhoneInputPage();
                       }));
@@ -87,9 +92,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ),
                   InfoCard(
                     title: 'Email',
-                    subtitle: email,
+                    subtitle: userProfile.email,
                     onPressed: () {
-                      print('Email: ' + email);
+                      print('Email: ' + userProfile.email);
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
                         return EmailInputPage();
                       }));
@@ -97,9 +102,9 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   ),
                   InfoCard(
                     title: 'Tell us about yourself',
-                    subtitle: bio,
+                    subtitle: userProfile.bio,
                     onPressed: () {
-                      print('Bio: ' + bio);
+                      print('Bio: ' + userProfile.bio);
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
                         return BioInputPage();
                       }));

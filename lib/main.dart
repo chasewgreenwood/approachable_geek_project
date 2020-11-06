@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:approachable_geek_project/models/user_profile.dart';
 import 'package:approachable_geek_project/pages/user_profile_page.dart';
 
 void main() {
